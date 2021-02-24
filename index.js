@@ -59,29 +59,29 @@ Person.prototype.toString = function(){
  return `${this.name}, ${this.age}`;
 }
  
- const test = new Person('Zachary', 23);
- const test2 = new Person('Trey', 21);
- const test3 = new Person('Nadia', 19);
+//  const test = new Person('Zachary', 23);
+//  const test2 = new Person('Trey', 21);
+//  const test3 = new Person('Nadia', 19);
 
- console.log(test.toString());
- console.log(test2.toString());
- console.log(test3.toString());
+//  console.log(test.toString());
+//  console.log(test2.toString());
+//  console.log(test3.toString());
 
- test.eat('Cake');
- test.eat('Cookie');
- test.eat('Cake');
- test.eat('Cookie');
- test.eat('Cake');
- test.eat('Cookie');
- test.eat('Cake');
- test.eat('Cookie');
- test.eat('Cake');
+//  test.eat('Cake');
+//  test.eat('Cookie');
+//  test.eat('Cake');
+//  test.eat('Cookie');
+//  test.eat('Cake');
+//  test.eat('Cookie');
+//  test.eat('Cake');
+//  test.eat('Cookie');
+//  test.eat('Cake');
  
 
- console.log(test.stomach)
+//  console.log(test.stomach)
 
- test.poop();
- console.log(test.stomach)
+//  test.poop();
+//  console.log(test.stomach)
   
   /*
     TASK 2
@@ -98,8 +98,18 @@ Person.prototype.toString = function(){
   */
   
  function Car(model, milesPerGallon) {
-    
+  this.model = model;
+  this.milesPerGallon = milesPerGallon;
+  this.tank = 0;
+  this. odometer = 0;
+ }
+  Car.prototype.fill = function(gallons){
+  this.tank = gallons
   }
+  
+  const test = new Car();
+  test.fill(10);
+  console.log(test.tank)
   
   
   /*
