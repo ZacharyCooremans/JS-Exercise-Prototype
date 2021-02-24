@@ -104,12 +104,12 @@ Person.prototype.toString = function(){
   this. odometer = 0;
  }
   Car.prototype.fill = function(gallons){
-  this.tank = gallons
+  this.tank = this.tank + gallons;
   }
   
   const test = new Car();
   test.fill(10);
-  console.log(test.tank)
+  //console.log(test.tank)
   
   
   /*
@@ -119,9 +119,15 @@ Person.prototype.toString = function(){
       - Besides the methods on Person.prototype, babies have the ability to `.play()`:
           + Should return a string "Playing with x", x being the favorite toy.
   */
- function Baby() {
-   
-  }
+ Baby.prototype = new Person()
+ function Baby(name, age, favoriteToy){
+   Person.call(this,name,age);
+   this.favoriteToy = favoriteToy;
+ }
+ 
+Baby.prototype.play = function(){
+  return `Playing with ${this.favoriteToy}`
+}
  
   
   /* 
