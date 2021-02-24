@@ -39,15 +39,49 @@ function Airplane(name) {
           + It should return a string with `name` and `age`. Example: "Mary, 50"
   */
   
- function Person() {
-    
-  }
+ function Person(name, age) {
+  this.name = name;
+  this.age = age;
+  this.stomach = [];
+}
+
+Person.prototype.eat = function(edible){
+ if(this.stomach.length < 10){
+   this.stomach.push(edible);
+ }
+}
+
+Person.prototype.poop = function(){
+ this.stomach = [];
+}
+
+Person.prototype.toString = function(){
+ return `${this.name}, ${this.age}`;
+}
  
+ const test = new Person('Zachary', 23);
+ const test2 = new Person('Trey', 21);
+ const test3 = new Person('Nadia', 19);
+
+ console.log(test.toString());
+ console.log(test2.toString());
+ console.log(test3.toString());
+
+ test.eat('Cake');
+ test.eat('Cookie');
+ test.eat('Cake');
+ test.eat('Cookie');
+ test.eat('Cake');
+ test.eat('Cookie');
+ test.eat('Cake');
+ test.eat('Cookie');
+ test.eat('Cake');
  
 
-  
-  
-  
+ console.log(test.stomach)
+
+ test.poop();
+ console.log(test.stomach)
   
   /*
     TASK 2
@@ -63,7 +97,7 @@ function Airplane(name) {
           + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
   */
   
- function Car() {
+ function Car(model, milesPerGallon) {
     
   }
   
