@@ -133,10 +133,10 @@ Baby.prototype.play = function(){
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. 
-    2. 
-    3. 
-    4. 
+    1. new is to call and this is for new object inside
+    2. this is passed to an argument when called by apply, call, or bird
+    3. when a dot is to the left of a function invocation, this is the object to the left of the dot.
+    4. this without declaring it to something will be window
   */
   
   
